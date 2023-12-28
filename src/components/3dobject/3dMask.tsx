@@ -1,24 +1,38 @@
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 
-export default function Mask({ props }) {
-  const { nodes, materials } = useGLTF("/3dmodel/3dmask.gltf");
+export default function Mask() {
+  const { nodes } = useGLTF("/3dmodel/medmask2.gltf");
 
-  console.log(nodes, "현재 뭐가 나오고 있지 ? ");
-  console.log(materials, " materials현재 뭐가 나오고 있지 ? ");
+  const maskMesh = nodes.mask_LP_RetopoFlow000 as THREE.Mesh;
+
+  const nodeGeometry = maskMesh.geometry;
+
+  const materials = maskMesh.material;
+
+  console.log(materials, "material 현재 뭐가 나오고 있지 ? ");
+
+  if (Array.isArray(materials)) {
+    materials.forEach((material) => {
+      material.side = THREE.DoubleSide;
+    });
+  } else {
+    materials.side = THREE.DoubleSide;
+  }
 
   return (
     <group
-      {...props}
+      // {...props}
       dispose={null}
-      scale={[0.1, 0.1, 0.1]}
-      position={[0, 0, -5]}
+      scale={0.75}
+      position={[0, 3, -5]}
     >
       <mesh
+        visible
         castShadow
         receiveShadow
-        geometry={nodes.mask_LP_RetopoFlow000.geometry}
-        material={nodes.mask_LP_RetopoFlow000.material}
+        geometry={nodeGeometry}
+        material={materials}
       />
     </group>
   );
