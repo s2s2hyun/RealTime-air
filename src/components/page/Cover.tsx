@@ -1,15 +1,33 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Mask from "../3dobject/3dMask";
+// import useProgressBar from "../../hook/useProgress";
+
+// interface StyledProps {
+//   isComplete: boolean;
+// }
 
 export default function Cover() {
-  //   /* const ref = useRef();*/
+  // const [isComplete, setIsComplete] = useState<boolean>(false);
+  // const progress = useProgressBar(1500, 150);
+
+  // useEffect(() => {
+  //   if (progress >= 100) {
+  //     setTimeout(() => {
+  //       setIsComplete(true);
+  //     }, 100);
+  //   }
+  // }, [progress]);
+
   return (
     <Wrapper>
+      {/* <ProgressWarpper isComplete={isComplete}>
+        <p>진행 상태: {Math.round(progress)}%</p>
+      </ProgressWarpper> */}
       <Container>
-        <p>공기</p>
+        <CoverTitle>현재 내가 있는곳에 대기 상태는?</CoverTitle>
       </Container>
       <CanvasContainer>
         <Canvas
@@ -32,6 +50,9 @@ export default function Cover() {
           />
         </Canvas>
       </CanvasContainer>
+      <ButtonContainer>
+        <SButton>확인</SButton>
+      </ButtonContainer>
     </Wrapper>
   );
 }
@@ -45,14 +66,83 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: 40vh;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+const CoverTitle = styled.h2`
+  font-size: 3.2em; // 기본 폰트 크기
+  font-weight: 700;
+  color: #fff;
+
+  @media (max-width: 1200px) {
+    font-size: 3em; // 화면 너비가 1200px 이하일 때
+  }
+
+  @media (max-width: 992px) {
+    font-size: 2.6em; // 화면 너비가 992px 이하일 때
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.2em; // 화면 너비가 768px 이하일 때
+  }
+
+  @media (max-width: 576px) {
+    font-size: 1.8em; // 화면 너비가 576px 이하일 때
+  }
+  @media (max-width: 480px) {
+    font-size: 1.6em; // 화면 너비가 576px 이하일 때
+  }
+`;
+
 const CanvasContainer = styled.div`
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   /* position: relative; */
 `;
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SButton = styled.button`
+  width: 175px;
+  height: 92px;
+  flex-shrink: 0;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 16px;
+  border: 2px solid #000;
+  cursor: pointer;
+  background: linear-gradient(270deg, #fff 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.5s;
+
+  &:hover {
+    border: 2px solid #000;
+
+    background-position: left bottom;
+    color: #fff;
+  }
+`;
+
+// const ProgressWarpper = styled.div<StyledProps>`
+//   display: ${(props) => (props.isComplete ? "none" : "flex")};
+//   justify-content: center;
+//   align-items: center;
+//   position: fixed; // 전체 화면에 고정
+//   top: 0;
+//   left: 0;
+//   z-index: 9999; // 다른 요소들 위에 표시
+//   width: 100%;
+//   height: 100vh; // 뷰포트 높이만큼 화면을 덮음
+//   background-color: rgba(59, 130, 246, 1); // 반투명 배경색
+// `;
