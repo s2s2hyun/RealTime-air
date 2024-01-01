@@ -1,8 +1,9 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import styled from "@emotion/styled";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 import Mask from "../3dobject/3dMask";
+import { useNavigate } from "react-router-dom";
 // import useProgressBar from "../../hook/useProgress";
 
 // interface StyledProps {
@@ -10,6 +11,7 @@ import Mask from "../3dobject/3dMask";
 // }
 
 export default function Cover() {
+  const navigate = useNavigate();
   // const [isComplete, setIsComplete] = useState<boolean>(false);
   // const progress = useProgressBar(1500, 150);
 
@@ -20,6 +22,10 @@ export default function Cover() {
   //     }, 100);
   //   }
   // }, [progress]);
+
+  const handleButtonClick = () => {
+    navigate("/home"); // "/home" 경로로 라우팅
+  };
 
   return (
     <Wrapper>
@@ -51,7 +57,7 @@ export default function Cover() {
         </Canvas>
       </CanvasContainer>
       <ButtonContainer>
-        <SButton>확인</SButton>
+        <SButton onClick={handleButtonClick}>확인</SButton>
       </ButtonContainer>
     </Wrapper>
   );
