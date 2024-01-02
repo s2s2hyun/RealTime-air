@@ -204,6 +204,19 @@ const Home = () => {
 
   console.log(center, "center");
 
+  console.log(dusty, "1.먼지");
+  console.log(grade, "1.등급");
+  console.log(oz, "2.오존");
+  console.log(ozGrade, "2.오존등급");
+  console.log(co, "3.일산화탄소");
+  console.log(coGrade, "3. 일산화탄소 등급");
+  console.log(so, "4.아황산가스");
+  console.log(soGrade, "4.아황산가스등급");
+  console.log(no, "5.이산화질소");
+  console.log(noGrade, "5.이산화질소등급");
+  console.log(khai, "6.통합대기");
+  console.log(khaiGrade, "6.통합대기등급");
+
   return (
     <div>
       {
