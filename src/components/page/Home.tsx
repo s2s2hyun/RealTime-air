@@ -37,27 +37,27 @@ const Home = () => {
 
   const [oz, setOz] = useState<string>(""); // 오존
   const [ozGrade, setOzGrade] = useState<string>(""); // 오존등급
-  const [ozColor, setOzColor] = useState<string>("#000");
+  const [ozColor, setOzColor] = useState<string>("");
   const [ozGradeText, setOzGradeText] = useState<string>("");
 
   const [co, setCo] = useState<string>(""); // 일산화탄소
   const [coGrade, setCoGrade] = useState(""); // 일산화탄소등급
-  const [coColor, setCoColor] = useState<string>("#000");
+  const [coColor, setCoColor] = useState<string>("");
   const [coGradeText, setCoGradeText] = useState<string>("");
 
   const [so, setSo] = useState<string>(""); // 아황산가스
   const [soGrade, setSoGrade] = useState<string>(""); // 아황산가스등급
-  const [soColor, setSoColor] = useState<string>("#000");
+  const [soColor, setSoColor] = useState<string>("");
   const [soGradeText, setSoGradeText] = useState<string>("");
 
   const [no, setNo] = useState<string>(""); // 이산화질소
   const [noGrade, setNoGrade] = useState<string>(""); // 이산화질소등급
-  const [noColor, setNoColor] = useState<string>("#000");
+  const [noColor, setNoColor] = useState<string>("");
   const [noGradeText, setNoGradeText] = useState<string>("");
 
   const [khai, setKhai] = useState<string>(""); // 통합대기
-  const [khaiGrade, setKhaiGrade] = useState<string>(""); // 통합대기등급
-  const [khaiColor, setKhaiColor] = useState<string>("#000");
+  const [khaiGrade, setKhaiGrade] = useState<string>(""); // 통합대기환경지수등급
+  const [khaiColor, setKhaiColor] = useState<string>("");
   const [khaiGradeText, setKhaiGradeText] = useState<string>("");
 
   const fetchAddress = useCallback(
@@ -158,7 +158,7 @@ const Home = () => {
           `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?dataTerm=month&pageNo=1&numOfRows=100&returnType=json&stationName=${center}&serviceKey=${public_key}`
         )
         .then((res) => {
-          // console.log(res.data.response?.body.items[0]);
+          console.log(res.data.response?.body.items[0]);
           setCoGrade(res.data.response?.body.items[0].coGrade);
           // console.log(
           //   res.data.response?.body.items[0].coGrade,
@@ -210,16 +210,18 @@ const Home = () => {
           //   res.data.response?.body.items[0].so2Grade,
           //   "so2Grade 아황산가스"
           // );
-          setSo(res.data.response?.body.items[0].so2Grade);
+          setSo(res.data.response?.body.items[0].so2Value);
           // console.log(
           //   res.data.response?.body.items[0].so2Value,
           //   "so2Value 아황산가스등급"
           // );
-          setSoGrade(res.data.response?.body.items[0].so2Value);
+          setSoGrade(res.data.response?.body.items[0].so2Grade);
         })
         .catch((error) => console.log(error));
     }
   }, [center, public_key]);
+
+  console.log(soGrade, "soGrade 등급은? ");
 
   useEffect(() => {
     if (grade === "1") {
@@ -241,6 +243,25 @@ const Home = () => {
   }, [grade]);
 
   useEffect(() => {
+    if (ozGrade === "1") {
+      setOzGradeText("좋음");
+      setOzColor("#4f96f1");
+    } else if (ozGrade === "2") {
+      setOzGradeText("보통");
+      setOzColor("#38d4ab");
+    } else if (ozGrade === "3") {
+      setOzGradeText("나쁨");
+      setOzColor("#f3c083");
+    } else if (ozGrade === "4") {
+      setOzGradeText("매우나쁨");
+      setOzColor("#f14c4c");
+    } else {
+      setOzGradeText("-");
+      setOzColor("#4f96f1");
+    }
+  }, [ozGrade]);
+
+  useEffect(() => {
     if (coGrade === "1") {
       setCoGradeText("좋음");
       setCoColor("#4f96f1");
@@ -258,6 +279,82 @@ const Home = () => {
       setCoColor("#4f96f1");
     }
   }, [coGrade]);
+
+  // useEffect(() => {
+  //   if (ozGrade === "1") {
+  //     setCoGradeText("좋음");
+  //     setCoColor("#4f96f1");
+  //   } else if (ozGrade === "2") {
+  //     setCoGradeText("보통");
+  //     setCoColor("#38d4ab");
+  //   } else if (ozGrade === "3") {
+  //     setCoGradeText("나쁨");
+  //     setCoColor("#f3c083");
+  //   } else if (ozGrade === "4") {
+  //     setCoGradeText("매우나쁨");
+  //     setCoColor("#f14c4c");
+  //   } else {
+  //     setCoGradeText("-");
+  //     setCoColor("#4f96f1");
+  //   }
+  // }, [ozGrade]);
+
+  useEffect(() => {
+    if (soGrade === "1") {
+      setSoGradeText("좋음");
+      setSoColor("#4f96f1");
+    } else if (soGrade === "2") {
+      setSoGradeText("보통");
+      setSoColor("#38d4ab");
+    } else if (soGrade === "3") {
+      setSoGradeText("나쁨");
+      setSoColor("#f3c083");
+    } else if (soGrade === "4") {
+      setSoGradeText("매우나쁨");
+      setSoColor("#f14c4c");
+    } else {
+      setSoGradeText("-");
+      setSoColor("#4f96f1");
+    }
+  }, [soGrade]);
+
+  useEffect(() => {
+    if (noGrade === "1") {
+      setNoGradeText("좋음");
+      setNoColor("#4f96f1");
+    } else if (noGrade === "2") {
+      setNoGradeText("보통");
+      setNoColor("#38d4ab");
+    } else if (noGrade === "3") {
+      setNoGradeText("나쁨");
+      setNoColor("#f3c083");
+    } else if (noGrade === "4") {
+      setNoGradeText("매우나쁨");
+      setNoColor("#f14c4c");
+    } else {
+      setNoGradeText("-");
+      setNoColor("#4f96f1");
+    }
+  }, [noGrade]);
+
+  useEffect(() => {
+    if (khaiGrade === "1") {
+      setKhaiGradeText("좋음");
+      setKhaiColor("#4f96f1");
+    } else if (khaiGrade === "2") {
+      setKhaiGradeText("보통");
+      setKhaiColor("#38d4ab");
+    } else if (khaiGrade === "3") {
+      setKhaiGradeText("나쁨");
+      setKhaiColor("#f3c083");
+    } else if (khaiGrade === "4") {
+      setKhaiGradeText("매우나쁨");
+      setKhaiColor("#f14c4c");
+    } else {
+      setKhaiGradeText("-");
+      setKhaiColor("#4f96f1");
+    }
+  }, [khaiGrade]);
 
   return (
     <Wrapper>
@@ -279,40 +376,40 @@ const Home = () => {
             <AirPieChart airtypeValue={co} airColor={coColor} />
             <ValueWrapper>
               <ValueText>{co}</ValueText>
-              <p>{coGradeText}</p>
+              <ValueAirStatus>{coGradeText}</ValueAirStatus>
               <ValueAir>일산화탄소</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={co} airColor={coColor} />
+            <AirPieChart airtypeValue={oz} airColor={ozColor} />
             <ValueWrapper>
-              <ValueText>{co}</ValueText>
-              <p>{coGradeText}</p>
-              <ValueAir>일산화탄소</ValueAir>
+              <ValueText>{oz}</ValueText>
+              <ValueAirStatus>{ozGradeText}</ValueAirStatus>
+              <ValueAir>오존</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={co} airColor={coColor} />
+            <AirPieChart airtypeValue={so} airColor={soColor} />
             <ValueWrapper>
-              <ValueText>{co}</ValueText>
-              <p>{coGradeText}</p>
-              <ValueAir>일산화탄소</ValueAir>
+              <ValueText>{so}</ValueText>
+              <ValueAirStatus>{soGradeText}</ValueAirStatus>
+              <ValueAir>아황산가스</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={co} airColor={coColor} />
+            <AirPieChart airtypeValue={no} airColor={noColor} />
             <ValueWrapper>
-              <ValueText>{co}</ValueText>
-              <p>{coGradeText}</p>
-              <ValueAir>일산화탄소</ValueAir>
+              <ValueText>{no}</ValueText>
+              <ValueAirStatus>{noGradeText}</ValueAirStatus>
+              <ValueAir>이산화질소등급</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={co} airColor={coColor} />
+            <AirPieChart airtypeValue={khai} airColor={khaiColor} />
             <ValueWrapper>
-              <ValueText>{co}</ValueText>
-              <p>{coGradeText}</p>
-              <ValueAir>일산화탄소</ValueAir>
+              <ValueText>{khai}</ValueText>
+              <ValueAirStatus>{khaiGradeText}</ValueAirStatus>
+              <ValueAir>통합대기환경지수</ValueAir>
             </ValueWrapper>
           </div>
         </BottomContainer>
@@ -402,4 +499,14 @@ const ValueText = styled.p`
 
 const ValueAir = styled.p`
   margin-top: 8px;
+  font-weight: 400;
+  color: #fff;
+  font-size: 1.2rem;
+`;
+
+const ValueAirStatus = styled.p`
+  margin-top: 8px;
+  font-weight: 400;
+  color: #fff;
+  font-size: 1rem;
 `;
