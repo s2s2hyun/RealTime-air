@@ -160,61 +160,17 @@ const Home = () => {
         .then((res) => {
           console.log(res.data.response?.body.items[0]);
           setCoGrade(res.data.response?.body.items[0].coGrade);
-          // console.log(
-          //   res.data.response?.body.items[0].coGrade,
-          //   "coGrade 이산화탄소등급"
-          // );
           setCo(res.data.response?.body.items[0].coValue);
-          // console.log(
-          //   res.data.response?.body.items[0].coValue,
-          //   "coValue 이산화탄소등급"
-          // );
           setKhaiGrade(res.data.response?.body.items[0].khaiGrade);
-          // console.log(
-          //   res.data.response?.body.items[0].khaiGrade,
-          //   "khaiGrade 통합대기 등급"
-          // );
-          // console.log(
-          //   res.data.response?.body.items[0].khaiValue,
-          //   "khaiValue 통합대기"
-          // );
           setKhai(res.data.response?.body.items[0].khaiValue);
           setNoGrade(res.data.response?.body.items[0].no2Grade);
-          // console.log(
-          //   res.data.response?.body.items[0].no2Grade,
-          //   "no2Grade 이산화질소등급"
-          // );
-          // console.log(
-          //   res.data.response?.body.items[0].no2Value,
-          //   "no2Value 이산화질소"
-          // );
           setNo(res.data.response?.body.items[0].no2Value);
           setOzGrade(res.data.response?.body.items[0].o3Grade);
-          // console.log(
-          //   res.data.response?.body.items[0].o3Grade,
-          //   "o3Grade 오존등급"
-          // );
-          // console.log(res.data.response?.body.items[0].o3Value, "o3Value 오존");
           setOz(res.data.response?.body.items[0].o3Value);
           setGrade(res.data.response?.body.items[0].pm10Grade);
-          // console.log(
-          //   res.data.response?.body.items[0].pm10Grade,
-          //   "pm10Grade 미세먼지등급"
-          // );
           setDusty(res.data.response?.body.items[0].pm10Value);
-          // console.log(
-          //   res.data.response?.body.items[0].pm10Value,
-          //   "pm10Value 미세먼지"
-          // );
-          // console.log(
-          //   res.data.response?.body.items[0].so2Grade,
-          //   "so2Grade 아황산가스"
-          // );
           setSo(res.data.response?.body.items[0].so2Value);
-          // console.log(
-          //   res.data.response?.body.items[0].so2Value,
-          //   "so2Value 아황산가스등급"
-          // );
+
           setSoGrade(res.data.response?.body.items[0].so2Grade);
         })
         .catch((error) => console.log(error));
