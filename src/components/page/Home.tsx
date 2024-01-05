@@ -453,6 +453,9 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 28px;
+  @media (max-width: 666px) {
+    margin-right: 0px;
+  }
 `;
 
 const BottomContainer = styled.div`
