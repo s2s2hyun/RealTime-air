@@ -127,7 +127,7 @@ const Home = () => {
     }
   }, [location, kakao_key, fetchAddress]);
 
-  console.log(changeCoord, " changeCoord");
+  // console.log(changeCoord, " changeCoord");
 
   useEffect(() => {
     if (isCoordValid) {
@@ -177,7 +177,7 @@ const Home = () => {
     }
   }, [center, public_key]);
 
-  console.log(soGrade, "soGrade 등급은? ");
+  // console.log(soGrade, "soGrade 등급은? ");
 
   useEffect(() => {
     if (grade === "1") {
@@ -329,41 +329,61 @@ const Home = () => {
         </TopContainer>
         <BottomContainer>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={co} airColor={coColor} />
+            <AirPieChart
+              airtypeValue={co}
+              airColor={coColor}
+              airTitle={"일산화탄소"}
+            />
             <ValueWrapper>
-              <ValueText>{co}</ValueText>
+              <ValueText>{co}ppm</ValueText>
               <ValueAirStatus>{coGradeText}</ValueAirStatus>
               <ValueAir>일산화탄소</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={oz} airColor={ozColor} />
+            <AirPieChart
+              airtypeValue={oz}
+              airColor={ozColor}
+              airTitle={"오존"}
+            />
             <ValueWrapper>
-              <ValueText>{oz}</ValueText>
+              <ValueText>{oz}ppm</ValueText>
               <ValueAirStatus>{ozGradeText}</ValueAirStatus>
               <ValueAir>오존</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={so} airColor={soColor} />
+            <AirPieChart
+              airtypeValue={so}
+              airColor={soColor}
+              airTitle={"아황산가스"}
+            />
             <ValueWrapper>
-              <ValueText>{so}</ValueText>
+              <ValueText>{so}ppm</ValueText>
               <ValueAirStatus>{soGradeText}</ValueAirStatus>
               <ValueAir>아황산가스</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={no} airColor={noColor} />
+            <AirPieChart
+              airtypeValue={no}
+              airColor={noColor}
+              airTitle={"이산화질소"}
+            />
             <ValueWrapper>
-              <ValueText>{no}</ValueText>
+              <ValueText>{no}ppm</ValueText>
               <ValueAirStatus>{noGradeText}</ValueAirStatus>
               <ValueAir>이산화질소등급</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
-            <AirPieChart airtypeValue={khai} airColor={khaiColor} />
+            <AirPieChart
+              airtypeValue={khai}
+              airColor={khaiColor}
+              airTitle={"통합대기환경"}
+            />
             <ValueWrapper>
-              <ValueText>{khai}</ValueText>
+              <ValueText>{khai}ppm</ValueText>
               <ValueAirStatus>{khaiGradeText}</ValueAirStatus>
               <ValueAir>통합대기환경지수</ValueAir>
             </ValueWrapper>
