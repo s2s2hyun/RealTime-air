@@ -321,11 +321,11 @@ const Home = () => {
       </VideoWrapper>
       <InnerContainer>
         <TopContainer>
-          <p>{address}</p>
+          <TopAddress>{address}</TopAddress>
           <br />
-          <p>{dusty}</p>
+          <TopDusty>{dusty}</TopDusty>
           <br />
-          <p>{gradeText}</p>
+          <TopGradeText>{gradeText}</TopGradeText>
         </TopContainer>
         <BottomContainer>
           <div style={{ position: "relative" }}>
@@ -335,7 +335,7 @@ const Home = () => {
               airTitle={"일산화탄소"}
             />
             <ValueWrapper>
-              <ValueText>{co}ppm</ValueText>
+              <ValueText>{co}</ValueText>
               <ValueAirStatus>{coGradeText}</ValueAirStatus>
               <ValueAir>일산화탄소</ValueAir>
             </ValueWrapper>
@@ -347,7 +347,7 @@ const Home = () => {
               airTitle={"오존"}
             />
             <ValueWrapper>
-              <ValueText>{oz}ppm</ValueText>
+              <ValueText>{oz}</ValueText>
               <ValueAirStatus>{ozGradeText}</ValueAirStatus>
               <ValueAir>오존</ValueAir>
             </ValueWrapper>
@@ -359,7 +359,7 @@ const Home = () => {
               airTitle={"아황산가스"}
             />
             <ValueWrapper>
-              <ValueText>{so}ppm</ValueText>
+              <ValueText>{so}</ValueText>
               <ValueAirStatus>{soGradeText}</ValueAirStatus>
               <ValueAir>아황산가스</ValueAir>
             </ValueWrapper>
@@ -371,9 +371,9 @@ const Home = () => {
               airTitle={"이산화질소"}
             />
             <ValueWrapper>
-              <ValueText>{no}ppm</ValueText>
+              <ValueText>{no}</ValueText>
               <ValueAirStatus>{noGradeText}</ValueAirStatus>
-              <ValueAir>이산화질소등급</ValueAir>
+              <ValueAir>이산화질소</ValueAir>
             </ValueWrapper>
           </div>
           <div style={{ position: "relative" }}>
@@ -383,9 +383,9 @@ const Home = () => {
               airTitle={"통합대기환경"}
             />
             <ValueWrapper>
-              <ValueText>{khai}ppm</ValueText>
+              <ValueText>{khai}</ValueText>
               <ValueAirStatus>{khaiGradeText}</ValueAirStatus>
-              <ValueAir>통합대기환경지수</ValueAir>
+              <ValueAir>통합대기</ValueAir>
             </ValueWrapper>
           </div>
         </BottomContainer>
@@ -459,6 +459,10 @@ const BottomContainer = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  padding-top: 3rem;
+  @media (max-width: 666px) {
+    padding-left: 1rem;
+  }
 `;
 
 const ValueWrapper = styled.div`
@@ -466,11 +470,28 @@ const ValueWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateX(-12px);
+  transform: translateX(-13px);
+  @media (max-width: 666px) {
+    transform: translateX(-8px);
+  }
 `;
 
 const ValueText = styled.p`
-  transform: translateY(-85px);
+  transform: translateY(-90px);
+  font-size: 1em;
+  color: #fff;
+  @media (max-width: 666px) {
+    font-size: 0.8em;
+    transform: translateY(-75px);
+  }
+  @media (max-width: 600px) {
+    font-size: 0.8em;
+    transform: translateY(-65px);
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8em;
+    transform: translateY(-58px);
+  }
 `;
 
 const ValueAir = styled.p`
@@ -478,6 +499,9 @@ const ValueAir = styled.p`
   font-weight: 400;
   color: #fff;
   font-size: 1.2rem;
+  @media (max-width: 666px) {
+    font-size: 0.8em;
+  }
 `;
 
 const ValueAirStatus = styled.p`
@@ -485,4 +509,22 @@ const ValueAirStatus = styled.p`
   font-weight: 400;
   color: #fff;
   font-size: 1rem;
+`;
+
+const TopAddress = styled.p`
+  font-size: 2rem;
+  font-weight: 200;
+  color: #fff;
+`;
+
+const TopDusty = styled.p`
+  font-weight: 200;
+  font-size: 2rem;
+  color: #fff;
+`;
+
+const TopGradeText = styled.p`
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
 `;

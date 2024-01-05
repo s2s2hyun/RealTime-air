@@ -23,14 +23,10 @@ const AirPieChart = ({
       return 5;
     } else if (airTitle === "통합대기환경") {
       return 260;
+    } else {
+      return 1;
     }
   };
-
-  console.log(
-    airTitle,
-    airtypeValue,
-    (Number(airtypeValue) / returnReveal(airTitle)) * 100
-  );
 
   return (
     <PieChart
@@ -55,7 +51,11 @@ const AirPieChart = ({
       ]}
       style={{ width: "80%", height: "80%", display: "inline-block" }}
       // reveal={Number(Number(airtypeValue) * 100)} // 퍼센트치수
-      reveal={(Number(airtypeValue) / returnReveal(airTitle)) * 100}
+      reveal={
+        airTitle === "오존"
+          ? Number(Number(airtypeValue) * 100)
+          : (Number(airtypeValue) / returnReveal(airTitle)) * 100
+      }
       lineWidth={18} // 도넛 두께
       background="#f2f2f2"
       lengthAngle={360}
