@@ -133,7 +133,7 @@ const Home = () => {
     if (isCoordValid) {
       axios
         .get(
-          `http://apis.data.go.kr/B552584/MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=${Number(
+          `https://apis.data.go.kr/B552584/MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=${Number(
             changeCoord.x
           )}&tmY=${Number(changeCoord.y)}&returnType=json&serviceKey=${String(
             public_key
