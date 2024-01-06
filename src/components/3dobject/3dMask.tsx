@@ -10,7 +10,7 @@ export default function Mask() {
 
   const materials = maskMesh.material;
 
-  console.log(materials, "material 현재 뭐가 나오고 있지 ? ");
+  // console.log(materials, "material 현재 뭐가 나오고 있지 ? ");
 
   if (Array.isArray(materials)) {
     materials.forEach((material) => {

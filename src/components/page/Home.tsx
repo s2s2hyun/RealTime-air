@@ -158,7 +158,7 @@ const Home = () => {
           `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?dataTerm=month&pageNo=1&numOfRows=100&returnType=json&stationName=${center}&serviceKey=${public_key}`
         )
         .then((res) => {
-          console.log(res.data.response?.body.items[0]);
+          // console.log(res.data.response?.body.items[0]);
           setCoGrade(res.data.response?.body.items[0].coGrade);
           setCo(res.data.response?.body.items[0].coValue);
           setKhaiGrade(res.data.response?.body.items[0].khaiGrade);
