@@ -19,4 +19,5 @@ const HeaderWrapper = styled.div`
 const HeaderLogo = styled.h4`
   color: #fff;
   font-size: 2em;
+  font-weight: 200;
 `;

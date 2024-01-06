@@ -22,4 +22,5 @@ const FooterWarpper = styled.div`
 const FooterTitle = styled.p`
   color: #fff;
   font-size: 1em;
+  font-weight: 200;
 `;
