@@ -150,7 +150,7 @@ const Home = () => {
         .catch((err) => console.log(err));
     }
   }, [changeCoord, public_key]);
-
+  //
   useEffect(() => {
     if (center) {
       axios
