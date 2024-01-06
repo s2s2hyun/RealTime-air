@@ -135,7 +135,7 @@ const Home = () => {
         .get(
           `https://apis.data.go.kr/B552584/MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=${Number(
             changeCoord.x
-          )}&tmY=${changeCoord.y}&returnType=json&serviceKey=${String(
+          )}&tmY=${Number(changeCoord.y)}&returnType=json&serviceKey=${String(
             public_key
           )}`
         )
