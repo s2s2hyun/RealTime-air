@@ -79,34 +79,36 @@ const Container = styled.div`
 `;
 
 const CoverTitle = styled.h2`
-  font-size: 3.2em; // 기본 폰트 크기
+  font-size: 3.2em;
   font-weight: 700;
   color: #fff;
 
   @media (max-width: 1200px) {
-    font-size: 3em; // 화면 너비가 1200px 이하일 때
+    font-size: 3em;
   }
 
   @media (max-width: 992px) {
-    font-size: 2.6em; // 화면 너비가 992px 이하일 때
+    font-size: 2.6em;
   }
 
   @media (max-width: 768px) {
-    font-size: 2.2em; // 화면 너비가 768px 이하일 때
+    font-size: 2.2em;
   }
 
   @media (max-width: 576px) {
-    font-size: 1.8em; // 화면 너비가 576px 이하일 때
+    font-size: 1.8em;
   }
   @media (max-width: 480px) {
-    font-size: 1.6em; // 화면 너비가 576px 이하일 때
+    font-size: 1.6em;
   }
 `;
 
 const CanvasContainer = styled.div`
   width: 100%;
   height: 40vh;
-  /* position: relative; */
+  @media (max-width: 576px) {
+    height: 30vh;
+  }
 `;
 
 const ButtonContainer = styled.div`
