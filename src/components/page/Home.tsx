@@ -23,7 +23,6 @@ interface StyledBackgroundProps {
 const Home = () => {
   const public_key = import.meta.env.VITE_REALTIME_AIR_KEY;
   const kakao_key = import.meta.env.VITE_APP_KAKAO_KEY;
-  // const kakao_js_key = import.meta.env.VITE_APP_KAKAO_JS_KEY;
   const location = useGeolocation();
   const [address, setAddress] = useState<string>("");
   const [changeCoord, setChangeCoord] = useState<Coordinates>({ x: 0, y: 0 });
@@ -72,7 +71,7 @@ const Home = () => {
           }
         );
         const addressData = response.data.documents?.[0]?.address;
-        // console.log(response);
+
         if (addressData) {
           setAddress(
             `${addressData.region_1depth_name} ${addressData.region_2depth_name} ${addressData.region_3depth_name}`
@@ -141,6 +140,9 @@ const Home = () => {
         )
         .then((res) => {
           const items = res.data.response?.body.items;
+
+          console.log(items, "items");
+
           if (items && items.length > 0) {
             setCenter(items[0]?.stationName);
           } else {
@@ -150,6 +152,8 @@ const Home = () => {
         .catch((err) => console.log(err));
     }
   }, [changeCoord, public_key]);
+
+  // console.log(center);
   //
   useEffect(() => {
     if (center) {

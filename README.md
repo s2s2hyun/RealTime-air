@@ -1,30 +1,28 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite 실시간 위치기반 대기 정보 알림 앱 프로젝트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+현재 위치를 기반으로 미세먼지 농도 등 대기 농도와 등급을 나타내주는 앱 서비스입니다.
 
-Currently, two official plugins are available:
+# 프로젝트 배포 링크
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Realtime-air](https://realtime-air.netlify.app/)
 
-## Expanding the ESLint configuration
+# 사용 API와 라이브러리
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [공공데이터포털](https://www.data.go.kr/index.do)
+- [에어코리아 오픈 API](https://www.airkorea.or.kr/web/)
+- [카카오 API](https://developers.kakao.com/)
+- [R3F](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+- [react-minimal-pie-chart](https://www.npmjs.com/package/react-minimal-pie-chart)
 
-- Configure the top-level `parserOptions` property like this:
+<br />
+<h2>Stack</h2>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- React.js
+- Typescript
+- @emotion-styled
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# 서비스 화면
+
+<h2>PC</h2>
+
+<h2>MOBILE</h2>
