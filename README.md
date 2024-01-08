@@ -24,5 +24,11 @@
 # 서비스 화면
 
 <h2>PC</h2>
+![project-photo](https://github.com/s2s2hyun/RealTime-air/assets/100761993/df7cbec0-c23f-4762-ac1b-e9b650b7bfde)
+
+![project-photo1](https://github.com/s2s2hyun/RealTime-air/assets/100761993/9d075738-eacf-47ae-b97a-78cf299cd570)
 
 <h2>MOBILE</h2>
+
+![KakaoTalk_20240108_230722431_01](https://github.com/s2s2hyun/RealTime-air/assets/100761993/fab180e2-8397-4120-b8c5-8e61af550533)
+![KakaoTalk_20240108_230722431](https://github.com/s2s2hyun/RealTime-air/assets/100761993/675df861-a93d-46dc-9141-4047a8b705d0)
