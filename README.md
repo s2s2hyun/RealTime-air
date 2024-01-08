@@ -24,7 +24,9 @@
 # 서비스 화면
 
 <h2>PC</h2>
-![project-photo](https://github.com/s2s2hyun/RealTime-air/assets/100761993/df7cbec0-c23f-4762-ac1b-e9b650b7bfde)
+
+![project-photo](https://github.com/s2s2hyun/RealTime-air/assets/100761993/3a0f0179-fb39-4819-a4c2-2aea2cffe716)
+
 
 ![project-photo1](https://github.com/s2s2hyun/RealTime-air/assets/100761993/9d075738-eacf-47ae-b97a-78cf299cd570)
 
