@@ -32,5 +32,7 @@
 
 <h2>MOBILE</h2>
 
-![KakaoTalk_20240108_230722431_01](https://github.com/s2s2hyun/RealTime-air/assets/100761993/fab180e2-8397-4120-b8c5-8e61af550533)
 ![KakaoTalk_20240108_230722431](https://github.com/s2s2hyun/RealTime-air/assets/100761993/675df861-a93d-46dc-9141-4047a8b705d0)
+
+![KakaoTalk_20240108_230722431_01](https://github.com/s2s2hyun/RealTime-air/assets/100761993/fab180e2-8397-4120-b8c5-8e61af550533)
+
