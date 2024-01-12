@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/icon-192x192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icon-180x180.png" sizes="180x180" />
+    <link rel="manifest" href="/manifest.json" />
     <title>RealTime-Air</title>
     <meta
       name="description"
@@ -36,5 +39,21 @@
     <div id="root"></div>
 
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        // Register a service worker hosted at the root of the
+        // site using the default scope.
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => {
+            console.log("Service worker registration succeeded:", registration);
+          })
+          .catch((err) => {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
   </body>
 </html>
