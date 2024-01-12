@@ -13,6 +13,7 @@
 - [카카오 API](https://developers.kakao.com/)
 - [R3F](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 - [react-minimal-pie-chart](https://www.npmjs.com/package/react-minimal-pie-chart)
+- PWA 적용완료
 
 <br />
 <h2>Stack</h2>
@@ -36,3 +37,6 @@
 
 ![KakaoTalk_20240108_230722431_01](https://github.com/s2s2hyun/RealTime-air/assets/100761993/fab180e2-8397-4120-b8c5-8e61af550533)
 
+<h2>PWA</h2>
+
+![pwa](https://github.com/s2s2hyun/RealTime-air/assets/100761993/98150f05-33e5-497e-a887-86c8c63ad2db)
